@@ -26,7 +26,7 @@ function getArrayParams(arr) {
 };
 
 // Задание 2
-function worker(arr) {
+ function worker(arr) {
   let sum = 0;
 
   for (let i = 0; i < arr.length; i++) {
@@ -39,7 +39,7 @@ function worker(arr) {
 let func = worker;
 
 function makeWork(arrOfArr, func) {
-  let max = arrOfArr[0];
+  let max = func(arrOfArr[0]);
  
   for (i = 0; i < arrOfArr.length; i++) {
     if (func(arrOfArr[i]) > max) {
@@ -47,7 +47,7 @@ function makeWork(arrOfArr, func) {
   };
 }; 
   return max;
-};
+}; 
 
 
 // Задание 3
@@ -69,7 +69,18 @@ function worker2(arr) {
      diff = max - min; 
      Math.abs(diff); 
 
-  return diff;
+return diff;
+};
+
+ function makeWork(arrOfArr, worker2) {
+  let max = worker2(arrOfArr[0]);
+ 
+  for (i = 0; i < arrOfArr.length; i++) {
+    if (worker2(arrOfArr[i]) > max) {
+      max = worker2(arrOfArr[i]);
+  };
+}; 
+  return max;
 };
 
 

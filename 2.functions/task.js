@@ -36,19 +36,41 @@ function worker(arr) {
   return sum;
 };
 
+let func = worker;
+
 function makeWork(arrOfArr, func) {
-  let max;
+  let max = arrOfArr[0];
  
-  let func = worker;
-  
   for (i = 0; i < arrOfArr.length; i++) {
-    if 
-  }
-  
+    if (func(arrOfArr[i]) > max) {
+      max = func(arrOfArr[i]);
+  };
+}; 
   return max;
-}
+};
+
 
 // Задание 3
 function worker2(arr) {
-  // Ваш код
-}
+  let min = arr[0]; 
+
+  let max = arr[0]; 
+     
+  let diff = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    } else if (arr[i] < min) {
+      min = arr[i];
+    };  
+  };
+     
+     diff = max - min; 
+     Math.abs(diff); 
+
+  return diff;
+};
+
+
+
